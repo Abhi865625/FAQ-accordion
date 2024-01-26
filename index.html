@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | FAQ accordion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="page1">
+          <div class="heading">
+            <img src="./images/icon-star.svg" alt="" />
+            <h1>FAQs</h1>
+          </div>
+          <div class="para" onclick="toggleAccordion('q1')">
+            <p>What is Frontend Mentor, and how will it help me?</p>
+            <img src="./images/icon-plus.svg" alt="" id="icon-q1" />
+          </div>
+          <section id="seeMore-q1" class="seeMore">
+            <p>
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+              for portfolio building.
+            </p>
+          </section>
+          <hr />
+          <div class="para" onclick="toggleAccordion('q2')">
+            <p>Is Frontend Mentor free?</p>
+            <img src="./images/icon-plus.svg" alt="" id="icon-q2" />
+          </div>
+          <section id="seeMore-q2" class="seeMore">
+            <p>
+              Yes, Frontend Mentor offers both free and premium coding
+              challenges, with the free option providing access to a range of
+              projects suitable for all skill levels.
+            </p>
+          </section>
+          <hr />
+          <div class="para" onclick="toggleAccordion('q3')">
+            <p>Can I use Frontend Mentor projects in my portfolio?</p>
+            <img src="./images/icon-plus.svg" alt="" id="icon-q3" />
+          </div>
+          <section id="seeMore-q3" class="seeMore">
+            <p>
+              Yes, you can use projects completed on Frontend Mentor in your
+              portfolio. It's an excellent way to showcase your skills to
+              potential employers!
+            </p>
+          </section>
+          <hr />
+          <div class="para" onclick="toggleAccordion('q4')">
+            <p>How can I get help if I'm stuck on a challenge?</p>
+            <img src="./images/icon-plus.svg" alt="" id="icon-q4" />
+          </div>
+          <section id="seeMore-q4" class="seeMore">
+            <p>
+              The best place to get help is inside Frontend Mentor's Discord
+              community. There's a help channel where you can ask questions and
+              seek support from other community members.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleAccordion(questionId) {
+        const icon = document.getElementById(`icon-${questionId}`);
+        const seeMore = document.getElementById(`seeMore-${questionId}`);
+
+        if (icon.src.includes("icon-plus.svg")) {
+          icon.src = "images/icon-minus.svg";
+          seeMore.style.display = "block";
+        } else {
+          icon.src = "images/icon-plus.svg";
+          seeMore.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
